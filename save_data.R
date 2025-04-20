@@ -1,9 +1,3 @@
-library(dplyr)
-library(purrr)
-library(readxl)
-library(stringr)
-library(janitor)
-
 # Download raw Excel
 
 url <- "https://github.com/b-rodrigues/rap4all/raw/master/datasets/vente-maison-2010-2021.xlsx"
@@ -110,7 +104,7 @@ current_communes <- "https://b-rodrigues.github.io/list_communes/" |>
 setdiff(unique(commune_level_data$locality), current_communes$commune)
 
 # We need former communes
-former_communes <- "https://b-rodrigues.github.io/former_communes/" |>
+former_communes <- "https://b-rodrigues.github.io/former_communes/#Former_communes" |>
   rvest::read_html() |>
   rvest::html_table() |>
   purrr::pluck(3) |>
